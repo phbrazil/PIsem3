@@ -45,13 +45,13 @@ public class MenuInicialTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(JAlterarProduto);
-        JAlterarProduto.setBounds(140, 160, 170, 60);
+        JAlterarProduto.setBounds(120, 160, 170, 60);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bereguetes Store");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 20, 310, 60);
+        jLabel1.setBounds(50, 0, 310, 60);
 
         JCadastrarProduto.setText("Cadastrar Produtos");
         JCadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +60,7 @@ public class MenuInicialTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(JCadastrarProduto);
-        JCadastrarProduto.setBounds(140, 70, 170, 60);
+        JCadastrarProduto.setBounds(120, 70, 170, 60);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

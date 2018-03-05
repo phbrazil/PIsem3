@@ -62,7 +62,7 @@ public class AlterarProdutoTela extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Alterar Produto");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(277, 6, 212, 45);
+        jLabel1.setBounds(280, 40, 212, 45);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setText("Código de Barras");
