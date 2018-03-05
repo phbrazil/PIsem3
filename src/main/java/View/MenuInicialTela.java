@@ -1,7 +1,5 @@
 package View;
 
-import View.CadastroClientesTela;
-import View.RelatoriosTela;
 import javax.swing.JOptionPane;
 
 /*
@@ -31,22 +29,11 @@ public class MenuInicialTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JVendas = new javax.swing.JButton();
         JControleEstoque = new javax.swing.JButton();
-        JAdicionarClientes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-
-        JVendas.setText("Vendas");
-        JVendas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JVendasActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JVendas);
-        JVendas.setBounds(70, 100, 160, 57);
 
         JControleEstoque.setText("Controle de Produtos");
         JControleEstoque.addActionListener(new java.awt.event.ActionListener() {
@@ -55,16 +42,7 @@ public class MenuInicialTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(JControleEstoque);
-        JControleEstoque.setBounds(290, 250, 170, 60);
-
-        JAdicionarClientes.setText("Controle de clientes");
-        JAdicionarClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JAdicionarClientesActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JAdicionarClientes);
-        JAdicionarClientes.setBounds(70, 250, 160, 57);
+        JControleEstoque.setBounds(270, 120, 170, 60);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -75,38 +53,16 @@ public class MenuInicialTela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JVendasActionPerformed
-
-        VendasTela vendas = new VendasTela();
-        vendas.setSize(850, 800);
-        vendas.setVisible(true);
-        vendas.setResizable(false);
-        vendas.setLocationRelativeTo(null);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JVendasActionPerformed
-
     private void JControleEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JControleEstoqueActionPerformed
 
-        ControleEstoqueTela controleestoque = new ControleEstoqueTela();
-        controleestoque.setSize(800, 800);
+        ControleProdutos controleestoque = new ControleProdutos();
+        controleestoque.setSize(400, 400);
         controleestoque.setVisible(true);
         controleestoque.setResizable(false);
         controleestoque.setLocationRelativeTo(null);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_JControleEstoqueActionPerformed
-
-    private void JAdicionarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JAdicionarClientesActionPerformed
-
-        CadastroClientesTela cadastroclientes = new CadastroClientesTela();
-        cadastroclientes.setSize(800, 800);
-        cadastroclientes.setVisible(true);
-        cadastroclientes.setResizable(false);
-        cadastroclientes.setLocationRelativeTo(null);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JAdicionarClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,9 +108,7 @@ public class MenuInicialTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JAdicionarClientes;
     private javax.swing.JButton JControleEstoque;
-    private javax.swing.JButton JVendas;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
