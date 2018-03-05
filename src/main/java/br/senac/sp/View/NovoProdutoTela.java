@@ -168,6 +168,8 @@ public class NovoProdutoTela extends javax.swing.JFrame {
         } else if (tudook == true) {
 
             novoproduto.InsertNovoProduto(produtos);
+            
+            JOptionPane.showMessageDialog(null, "Produto "+produtos.getNomeProduto()+" Cadastrado");
 
             JNomeProduto.setText("");
             JDescricao.setText("");
