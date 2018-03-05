@@ -29,20 +29,21 @@ public class MenuInicialTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JControleEstoque = new javax.swing.JButton();
+        JAlterarProduto = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        JCadastrarProduto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        JControleEstoque.setText("Controle de Produtos");
-        JControleEstoque.addActionListener(new java.awt.event.ActionListener() {
+        JAlterarProduto.setText("Alterar Produto");
+        JAlterarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JControleEstoqueActionPerformed(evt);
+                JAlterarProdutoActionPerformed(evt);
             }
         });
-        getContentPane().add(JControleEstoque);
-        JControleEstoque.setBounds(130, 120, 170, 60);
+        getContentPane().add(JAlterarProduto);
+        JAlterarProduto.setBounds(140, 160, 170, 60);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -50,19 +51,35 @@ public class MenuInicialTela extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(70, 20, 310, 60);
 
+        JCadastrarProduto.setText("Cadastrar Produtos");
+        JCadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCadastrarProdutoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JCadastrarProduto);
+        JCadastrarProduto.setBounds(140, 70, 170, 60);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JControleEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JControleEstoqueActionPerformed
+    private void JAlterarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JAlterarProdutoActionPerformed
 
-        ControleProdutos controleestoque = new ControleProdutos();
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JAlterarProdutoActionPerformed
+
+    private void JCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCadastrarProdutoActionPerformed
+
+        NovoProdutoTela controleestoque = new NovoProdutoTela();
         controleestoque.setSize(800, 800);
         controleestoque.setVisible(true);
         controleestoque.setResizable(false);
         controleestoque.setLocationRelativeTo(null);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_JControleEstoqueActionPerformed
+    }//GEN-LAST:event_JCadastrarProdutoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -108,7 +125,8 @@ public class MenuInicialTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JControleEstoque;
+    private javax.swing.JButton JAlterarProduto;
+    private javax.swing.JButton JCadastrarProduto;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

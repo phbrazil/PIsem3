@@ -1,6 +1,5 @@
 package View;
 
-import DAO.Produtos.NovoProduto;
 import Model.Produtos;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -18,14 +17,14 @@ import javax.swing.JOptionPane;
  *
  * @author paulo.bezerra
  */
-public class ControleProdutos extends javax.swing.JFrame {
+public class NovoProdutoTela extends javax.swing.JFrame {
 
     private int contador = 1;
 
     /**
      * Creates new form ControleEstoque
      */
-    public ControleProdutos() {
+    public NovoProdutoTela() {
         initComponents();
         jSpinnerQuantidadeProd.setValue(1);
 
@@ -128,16 +127,10 @@ public class ControleProdutos extends javax.swing.JFrame {
         // InsertBancoMySQL novoproduto = new InsertBancoMySQL();
         Model.Produtos produtos = new Produtos();
 
-        DAO.Produtos.NovoProduto cadastrarproduto = new NovoProduto();
-
-        String nomeproduto = "", faixaetaria = "", fabricante = "", prazogarantia = "";
-        int quantidade = 0;
-        int codigobarras = 0;
-
-        double valor = 0;
+        DAO.Produtos.NovoProduto novoproduto = new DAO.Produtos.NovoProduto();
 
         boolean tudook = false;
-        
+
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         Date today = Calendar.getInstance().getTime();
@@ -174,11 +167,12 @@ public class ControleProdutos extends javax.swing.JFrame {
             //O ELSE GRAVA UM NOVO PRODUTO
         } else if (tudook == true) {
 
-            cadastrarproduto.InsertNovoProduto(produtos);
+            novoproduto.InsertNovoProduto(produtos);
 
             JNomeProduto.setText("");
             JDescricao.setText("");
             JPrecoVenda.setText("");
+            JPrecoCompra.setText("");
             jSpinnerQuantidadeProd.setValue(1);
             JCodigoBarras.setText("");
         }
