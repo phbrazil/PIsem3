@@ -2,6 +2,11 @@ package View;
 
 import DAO.Produtos.NovoProduto;
 import Model.Produtos;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /*
@@ -39,18 +44,16 @@ public class ControleProdutos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         JNomeProduto = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        JFabricante = new javax.swing.JTextField();
+        JDescricao = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jComboFaixa = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jComboGarantia = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jSpinnerQuantidadeProd = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
         JCodigoBarras = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jFormattedValorProduto = new javax.swing.JFormattedTextField();
+        JPrecoVenda = new javax.swing.JFormattedTextField();
+        jLabel9 = new javax.swing.JLabel();
+        JPrecoCompra = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -77,43 +80,25 @@ public class ControleProdutos extends javax.swing.JFrame {
         jLabel2.setText(" Nome do Produto");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(30, 140, 121, 23);
-        getContentPane().add(JFabricante);
-        JFabricante.setBounds(320, 170, 210, 30);
+        getContentPane().add(JDescricao);
+        JDescricao.setBounds(320, 170, 390, 30);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setText("Fabricante");
+        jLabel3.setText("Descricao");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(320, 140, 160, 20);
 
-        jComboFaixa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0 à 12 meses", "1 à 2 anos", "3 à 4 anos", "5 à 6 anos", "7 à 8 anos", "9 à 10 anos", "11 anos ou mais" }));
-        getContentPane().add(jComboFaixa);
-        jComboFaixa.setBounds(550, 170, 150, 30);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setText("Faixa etária");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(550, 140, 130, 30);
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setText("Prazo de Garantia");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(30, 210, 150, 30);
-
-        jComboGarantia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3 meses", "6 meses", "1 ano"}));
-        getContentPane().add(jComboGarantia);
-        jComboGarantia.setBounds(30, 250, 180, 30);
-
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setText("Valor");
+        jLabel6.setText("Preco Venda");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(330, 220, 110, 20);
+        jLabel6.setBounds(210, 220, 110, 20);
         getContentPane().add(jSpinnerQuantidadeProd);
-        jSpinnerQuantidadeProd.setBounds(570, 250, 80, 30);
+        jSpinnerQuantidadeProd.setBounds(400, 250, 80, 30);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setText("Quantidade");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(570, 220, 90, 20);
+        jLabel7.setBounds(400, 220, 90, 20);
         getContentPane().add(JCodigoBarras);
         JCodigoBarras.setBounds(30, 80, 680, 40);
 
@@ -122,9 +107,18 @@ public class ControleProdutos extends javax.swing.JFrame {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(30, 50, 250, 20);
 
-        jFormattedValorProduto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
-        getContentPane().add(jFormattedValorProduto);
-        jFormattedValorProduto.setBounds(330, 250, 150, 30);
+        JPrecoVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
+        getContentPane().add(JPrecoVenda);
+        JPrecoVenda.setBounds(210, 250, 150, 30);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel9.setText("Preco Compra");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(30, 220, 110, 20);
+
+        JPrecoCompra.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
+        getContentPane().add(JPrecoCompra);
+        JPrecoCompra.setBounds(30, 250, 150, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -132,7 +126,6 @@ public class ControleProdutos extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         // InsertBancoMySQL novoproduto = new InsertBancoMySQL();
-
         Model.Produtos produtos = new Produtos();
 
         DAO.Produtos.NovoProduto cadastrarproduto = new NovoProduto();
@@ -144,20 +137,23 @@ public class ControleProdutos extends javax.swing.JFrame {
         double valor = 0;
 
         boolean tudook = false;
+        
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date today = Calendar.getInstance().getTime();
 
         //TENTA PEGAR OS DADOS DO NOVO PRODUTO
         do {
             try {
                 produtos.setCodigobarras(Integer.valueOf(JCodigoBarras.getText()));
                 produtos.setNomeProduto(String.valueOf(JNomeProduto.getText()));
-
-                produtos.setFabricante(String.valueOf(JFabricante.getText()));
-                produtos.setFaixaEtaria(String.valueOf(jComboFaixa.getSelectedItem()));
-                produtos.setGarantia(String.valueOf(jComboGarantia.getSelectedItem()));
+                produtos.setDescricao(String.valueOf(JDescricao.getText()));
                 //VALOR TEM UM REPLACE CASO O USER INSIRA VIRGULA EM VEZ DE PONTO
-                produtos.setValor(Double.valueOf(jFormattedValorProduto.getText().replace(",", ".")));
+                produtos.setPrecoVenda(Double.valueOf(JPrecoVenda.getText().replace(",", ".")));
+                produtos.setPrecoCompra(Double.valueOf(JPrecoCompra.getText().replace(",", ".")));
                 produtos.setQuantidade((Integer) jSpinnerQuantidadeProd.getValue());
-                produtos.setValorDesconto(Double.valueOf(jFormattedValorProduto.getText().replace(",", ".")));
+                produtos.setDatacadastro(java.sql.Date.valueOf(LocalDate.MAX));
+
                 tudook = true;
 
             } catch (NumberFormatException erro) {
@@ -171,7 +167,7 @@ public class ControleProdutos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Nome do produto muito curto");
 
             //SE O NOME DO FABRINCANTE FOR INVALIDO
-        } else if (JFabricante.getText().length() <= 1) {
+        } else if (JDescricao.getText().length() <= 1) {
 
             JOptionPane.showMessageDialog(null, "Nome de Fabricante muito curto");
 
@@ -181,8 +177,8 @@ public class ControleProdutos extends javax.swing.JFrame {
             cadastrarproduto.InsertNovoProduto(produtos);
 
             JNomeProduto.setText("");
-            JFabricante.setText("");
-            jFormattedValorProduto.setText("");
+            JDescricao.setText("");
+            JPrecoVenda.setText("");
             jSpinnerQuantidadeProd.setValue(1);
             JCodigoBarras.setText("");
         }
@@ -193,23 +189,21 @@ public class ControleProdutos extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JCodigoBarras;
-    private javax.swing.JTextField JFabricante;
+    private javax.swing.JTextField JDescricao;
     private javax.swing.JTextField JNomeProduto;
+    private javax.swing.JFormattedTextField JPrecoCompra;
+    private javax.swing.JFormattedTextField JPrecoVenda;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboFaixa;
-    private javax.swing.JComboBox<String> jComboGarantia;
-    private javax.swing.JFormattedTextField jFormattedValorProduto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JSpinner jSpinnerQuantidadeProd;
     // End of variables declaration//GEN-END:variables
 }

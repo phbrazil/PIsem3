@@ -25,8 +25,10 @@ public class NovoProduto {
             conexao = BancoMySQL.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            st.executeUpdate("INSERT INTO produtos (codigobarras, nomeproduto,valor,valordesconto, faixaetaria,fabricante,prazogarantia, quantidade,DataCadastro, statusproduto)"
-                    + " VALUES (" + produtos.getCodigobarras()+ ",'" + produtos.getNomeProduto() + "'," + produtos.getValor() + "," + produtos.getValorDesconto()+ ",'" + produtos.getFaixaEtaria() + "','" + produtos.getFabricante()+"','"+produtos.getGarantia()+"',"+produtos.getQuantidade()+",NOW(),true);");
+            st.executeUpdate("INSERT INTO PRODUTO (NOME, DESCRICAO,PRECO_COMPRA,PRECO_VENDA, QUANTIDADE,DT_CADASTRO)"
+                    + " VALUES ('" + produtos.getNomeProduto() + "','" + produtos.getDescricao()
+                    + "'," + produtos.getPrecoCompra() + "," + produtos.getPrecoVenda() + ","
+                    + produtos.getQuantidade() + ",NOW());");
             conexao.close();
 
         } catch (Exception e) {

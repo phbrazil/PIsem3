@@ -21,7 +21,7 @@ public class BancoMySQL {
     public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
 
-            String url = "jdbc:mysql://localhost:3306/LojaBrinquedos";
+            String url = "jdbc:mysql://localhost:3306/PRODUTOBD";
 
             Properties dados = new Properties();
             dados.put("user", "root");

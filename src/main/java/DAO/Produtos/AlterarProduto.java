@@ -36,11 +36,10 @@ public class AlterarProduto {
 
                 produtos.setCodigobarras(result.getInt("codigobarras"));
                 produtos.setNomeProduto(result.getString("nomeproduto"));
-                produtos.setFaixaEtaria(result.getString("faixaetaria"));
-                produtos.setFabricante(result.getString("fabricante"));
-                produtos.setGarantia(result.getString("prazogarantia"));
-                produtos.setValor(result.getDouble("valor"));
-                produtos.setValorDesconto(result.getDouble("valordesconto"));
+                produtos.setDescricao(result.getString("descricao"));
+                produtos.setPrecoCompra(result.getDouble("preco_compra"));
+                produtos.setPrecoVenda(result.getDouble("preco_venda"));
+                produtos.setDatacadastro(result.getDate("dt_cadastro"));
                 produtos.setQuantidade(result.getInt("quantidade"));
 
             }
@@ -61,7 +60,6 @@ public class AlterarProduto {
 
     public void AtualizarProduto(Produtos produtos) {
 
-        String select = "";
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -69,10 +67,9 @@ public class AlterarProduto {
             conexao = DAO.BancoMySQL.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            st.executeUpdate("update produtos set nomeproduto = '"+produtos.getNomeProduto()+"', fabricante = '"+produtos.getFabricante()
-                    +"', faixaetaria = '"+produtos.getFaixaEtaria()+"', valor = "+produtos.getValor()+
-                    ", prazogarantia = '"+produtos.getGarantia()+"', quantidade = "+produtos.getQuantidade()+
-                    ", statusproduto = "+" where codigobarras = "+produtos.getCodigobarras());
+            st.executeUpdate("update produtos set nomeproduto = '"+produtos.getNomeProduto()+"', descricao = '"+produtos.getDescricao()
+                    +"', preco_compra = "+produtos.getPrecoCompra()+", preco_venda = "+produtos.getPrecoVenda()+
+                    ", quantidade = "+produtos.getQuantidade()+", dt_cadastro = NOW() where codigobarras = "+produtos.getCodigobarras()+";");
 
             conexao.close();
 
