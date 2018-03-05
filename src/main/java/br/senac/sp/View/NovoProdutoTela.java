@@ -1,6 +1,6 @@
-package View;
+package br.senac.sp.View;
 
-import Model.Produtos;
+import br.senac.sp.Model.Produtos;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -125,9 +125,9 @@ public class NovoProdutoTela extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         // InsertBancoMySQL novoproduto = new InsertBancoMySQL();
-        Model.Produtos produtos = new Produtos();
+        br.senac.sp.Model.Produtos produtos = new Produtos();
 
-        DAO.Produtos.Novo novoproduto = new DAO.Produtos.Novo();
+        br.senac.sp.DAO.Produtos.Novo novoproduto = new br.senac.sp.DAO.Produtos.Novo();
 
         boolean tudook = false;
 
@@ -175,7 +175,9 @@ public class NovoProdutoTela extends javax.swing.JFrame {
             JPrecoCompra.setText("");
             jSpinnerQuantidadeProd.setValue(1);
             JCodigoBarras.setText("");
+        
         }
+        
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed

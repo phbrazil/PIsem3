@@ -1,7 +1,7 @@
-package View;
+package br.senac.sp.View;
 
-import DAO.Produtos.Alterar;
-import Model.Produtos;
+import br.senac.sp.DAO.Produtos.Alterar;
+import br.senac.sp.Model.Produtos;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -135,8 +135,8 @@ public class AlterarProdutoTela extends javax.swing.JFrame {
     private void JPesquisarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JPesquisarProdutoActionPerformed
 
         
-        DAO.Produtos.Alterar alterarproduto = new Alterar();
-        Model.Produtos produtos = new Produtos();
+        br.senac.sp.DAO.Produtos.Alterar alterarproduto = new Alterar();
+        br.senac.sp.Model.Produtos produtos = new Produtos();
 
         boolean tudook = false;
 
@@ -169,9 +169,9 @@ public class AlterarProdutoTela extends javax.swing.JFrame {
 
     private void GravarAltProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GravarAltProdActionPerformed
 
-        Produtos produtos = new Produtos();
+        br.senac.sp.Model.Produtos produtos = new Produtos();
 
-        DAO.Produtos.Alterar updateprod = new Alterar();
+        br.senac.sp.DAO.Produtos.Alterar updateprod = new Alterar();
 
         produtos.setCodigobarras(Integer.valueOf(JCodigoBarrasAlterar.getText()));
         produtos.setNomeProduto(String.valueOf(JNomeProdutoAlterar.getText()));
@@ -193,7 +193,7 @@ public class AlterarProdutoTela extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_GravarAltProdActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */

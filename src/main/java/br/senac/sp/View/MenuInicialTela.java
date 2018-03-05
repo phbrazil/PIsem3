@@ -1,6 +1,6 @@
-package View;
+package br.senac.sp.View;
 
-import DAO.Produtos.Alterar;
+import br.senac.sp.DAO.Produtos.Alterar;
 import javax.swing.JOptionPane;
 import javax.swing.text.View;
 
@@ -67,19 +67,19 @@ public class MenuInicialTela extends javax.swing.JFrame {
 
     private void JAlterarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JAlterarProdutoActionPerformed
 
-        AlterarProdutoTela test = new AlterarProdutoTela();
+        br.senac.sp.View.AlterarProdutoTela alterarproduto = new AlterarProdutoTela();
 
-        test.setSize(800, 800);
-        test.setVisible(true);
-        test.setResizable(false);
-        test.setLocationRelativeTo(null);
+        alterarproduto.setSize(800, 800);
+        alterarproduto.setVisible(true);
+        alterarproduto.setResizable(false);
+        alterarproduto.setLocationRelativeTo(null);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_JAlterarProdutoActionPerformed
 
     private void JCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCadastrarProdutoActionPerformed
 
-        NovoProdutoTela novoproduto = new NovoProdutoTela();
+        br.senac.sp.View.NovoProdutoTela novoproduto = new NovoProdutoTela();
         novoproduto.setSize(800, 800);
         novoproduto.setVisible(true);
         novoproduto.setResizable(false);
@@ -100,7 +100,7 @@ public class MenuInicialTela extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                MenuInicialTela telaInicial = new MenuInicialTela();
+                br.senac.sp.View.MenuInicialTela telaInicial = new MenuInicialTela();
                 telaInicial.setSize(400, 400);
                 telaInicial.setVisible(true);
                 telaInicial.setResizable(false);

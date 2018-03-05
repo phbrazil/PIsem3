@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO.Produtos;
+package br.senac.sp.DAO.Produtos;
 
-import Model.Produtos;
+import br.senac.sp.Model.Produtos;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
@@ -26,7 +26,7 @@ public class Alterar {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            conexao = DAO.BancoMySQL.getConnection();
+            conexao = br.senac.sp.DAO.BancoMySQL.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
             select = "select * from produto where id = " + codigobarras;
@@ -64,7 +64,7 @@ public class Alterar {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            conexao = DAO.BancoMySQL.getConnection();
+            conexao = br.senac.sp.DAO.BancoMySQL.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
             st.executeUpdate("update produto set nome = '"+produtos.getNomeProduto()+"', descricao = '"+produtos.getDescricao()

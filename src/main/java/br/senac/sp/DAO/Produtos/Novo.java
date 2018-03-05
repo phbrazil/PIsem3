@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO.Produtos;
+package br.senac.sp.DAO.Produtos;
 
-import DAO.BancoMySQL;
-import Model.Produtos;
+import br.senac.sp.DAO.BancoMySQL;
+import br.senac.sp.Model.Produtos;
 import java.sql.Connection;
 
 /**
