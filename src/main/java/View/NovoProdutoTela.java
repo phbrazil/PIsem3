@@ -69,7 +69,7 @@ public class NovoProdutoTela extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Controle de Estoque");
+        jLabel1.setText("Cadastrar Produto");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(265, 11, 212, 45);
         getContentPane().add(JNomeProduto);
@@ -127,7 +127,7 @@ public class NovoProdutoTela extends javax.swing.JFrame {
         // InsertBancoMySQL novoproduto = new InsertBancoMySQL();
         Model.Produtos produtos = new Produtos();
 
-        DAO.Produtos.NovoProduto novoproduto = new DAO.Produtos.NovoProduto();
+        DAO.Produtos.Novo novoproduto = new DAO.Produtos.Novo();
 
         boolean tudook = false;
 

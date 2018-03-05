@@ -13,7 +13,7 @@ import java.sql.Connection;
  *
  * @author paulo.hbezerra
  */
-public class NovoProduto {
+public class Novo {
 
     private Connection conexao = null;
 

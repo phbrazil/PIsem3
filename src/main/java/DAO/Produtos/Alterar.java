@@ -13,7 +13,7 @@ import java.sql.ResultSet;
  *
  * @author Paulo.Bezerra
  */
-public class AlterarProduto {
+public class Alterar {
 
     private Connection conexao = null;
 
@@ -29,13 +29,13 @@ public class AlterarProduto {
             conexao = DAO.BancoMySQL.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            select = "select * from produtos where codigobarras = " + codigobarras;
+            select = "select * from produto where id = " + codigobarras;
             ResultSet result = st.executeQuery(select);
 
             while (result.next()) {
 
-                produtos.setCodigobarras(result.getInt("codigobarras"));
-                produtos.setNomeProduto(result.getString("nomeproduto"));
+                produtos.setCodigobarras(result.getInt("id"));
+                produtos.setNomeProduto(result.getString("nome"));
                 produtos.setDescricao(result.getString("descricao"));
                 produtos.setPrecoCompra(result.getDouble("preco_compra"));
                 produtos.setPrecoVenda(result.getDouble("preco_venda"));
@@ -67,9 +67,9 @@ public class AlterarProduto {
             conexao = DAO.BancoMySQL.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            st.executeUpdate("update produtos set nomeproduto = '"+produtos.getNomeProduto()+"', descricao = '"+produtos.getDescricao()
+            st.executeUpdate("update produtos set nome = '"+produtos.getNomeProduto()+"', descricao = '"+produtos.getDescricao()
                     +"', preco_compra = "+produtos.getPrecoCompra()+", preco_venda = "+produtos.getPrecoVenda()+
-                    ", quantidade = "+produtos.getQuantidade()+", dt_cadastro = NOW() where codigobarras = "+produtos.getCodigobarras()+";");
+                    ", quantidade = "+produtos.getQuantidade()+", dt_cadastro = NOW() where id = "+produtos.getCodigobarras()+";");
 
             conexao.close();
 

@@ -1,6 +1,8 @@
 package View;
 
+import DAO.Produtos.Alterar;
 import javax.swing.JOptionPane;
+import javax.swing.text.View;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -65,18 +67,23 @@ public class MenuInicialTela extends javax.swing.JFrame {
 
     private void JAlterarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JAlterarProdutoActionPerformed
 
-        
-        
+        AlterarProdutoTela test = new AlterarProdutoTela();
+
+        test.setSize(800, 800);
+        test.setVisible(true);
+        test.setResizable(false);
+        test.setLocationRelativeTo(null);
+
         // TODO add your handling code here:
     }//GEN-LAST:event_JAlterarProdutoActionPerformed
 
     private void JCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCadastrarProdutoActionPerformed
 
-        NovoProdutoTela controleestoque = new NovoProdutoTela();
-        controleestoque.setSize(800, 800);
-        controleestoque.setVisible(true);
-        controleestoque.setResizable(false);
-        controleestoque.setLocationRelativeTo(null);
+        NovoProdutoTela novoproduto = new NovoProdutoTela();
+        novoproduto.setSize(800, 800);
+        novoproduto.setVisible(true);
+        novoproduto.setResizable(false);
+        novoproduto.setLocationRelativeTo(null);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_JCadastrarProdutoActionPerformed
@@ -90,28 +97,7 @@ public class MenuInicialTela extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuInicialTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuInicialTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuInicialTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuInicialTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 MenuInicialTela telaInicial = new MenuInicialTela();
