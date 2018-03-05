@@ -67,7 +67,7 @@ public class Alterar {
             conexao = DAO.BancoMySQL.getConnection();
 
             java.sql.Statement st = conexao.createStatement();
-            st.executeUpdate("update produtos set nome = '"+produtos.getNomeProduto()+"', descricao = '"+produtos.getDescricao()
+            st.executeUpdate("update produto set nome = '"+produtos.getNomeProduto()+"', descricao = '"+produtos.getDescricao()
                     +"', preco_compra = "+produtos.getPrecoCompra()+", preco_venda = "+produtos.getPrecoVenda()+
                     ", quantidade = "+produtos.getQuantidade()+", dt_cadastro = NOW() where id = "+produtos.getCodigobarras()+";");
 
