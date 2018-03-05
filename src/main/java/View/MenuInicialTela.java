@@ -56,7 +56,7 @@ public class MenuInicialTela extends javax.swing.JFrame {
     private void JControleEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JControleEstoqueActionPerformed
 
         ControleProdutos controleestoque = new ControleProdutos();
-        controleestoque.setSize(400, 400);
+        controleestoque.setSize(800, 800);
         controleestoque.setVisible(true);
         controleestoque.setResizable(false);
         controleestoque.setLocationRelativeTo(null);
@@ -98,7 +98,7 @@ public class MenuInicialTela extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 MenuInicialTela telaInicial = new MenuInicialTela();
-                telaInicial.setSize(800, 800);
+                telaInicial.setSize(400, 400);
                 telaInicial.setVisible(true);
                 telaInicial.setResizable(false);
                 telaInicial.setLocationRelativeTo(null);

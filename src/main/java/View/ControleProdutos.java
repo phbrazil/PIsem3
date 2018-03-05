@@ -1,7 +1,6 @@
 package View;
 
-import Mock.CadastrarProduto;
-import Mock.CadastrarProduto;
+import DAO.Produtos.NovoProduto;
 import Model.Produtos;
 import javax.swing.JOptionPane;
 
@@ -136,7 +135,7 @@ public class ControleProdutos extends javax.swing.JFrame {
 
         Model.Produtos produtos = new Produtos();
 
-        CadastrarProduto cadastrarproduto = new CadastrarProduto();
+        DAO.Produtos.NovoProduto cadastrarproduto = new NovoProduto();
 
         String nomeproduto = "", faixaetaria = "", fabricante = "", prazogarantia = "";
         int quantidade = 0;
@@ -179,7 +178,7 @@ public class ControleProdutos extends javax.swing.JFrame {
             //O ELSE GRAVA UM NOVO PRODUTO
         } else if (tudook == true) {
 
-            cadastrarproduto.inserirProduto(produtos);
+            cadastrarproduto.InsertNovoProduto(produtos);
 
             JNomeProduto.setText("");
             JFabricante.setText("");
