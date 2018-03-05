@@ -42,13 +42,13 @@ public class MenuInicialTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(JControleEstoque);
-        JControleEstoque.setBounds(270, 120, 170, 60);
+        JControleEstoque.setBounds(130, 120, 170, 60);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bereguetes Store");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(210, 10, 310, 60);
+        jLabel1.setBounds(70, 20, 310, 60);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
