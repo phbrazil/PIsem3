@@ -4,11 +4,7 @@ import br.senac.sp.DAO.Produtos.Alterar;
 import javax.swing.JOptionPane;
 import javax.swing.text.View;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 /**
  *
  * @author paulo.hbezerra
