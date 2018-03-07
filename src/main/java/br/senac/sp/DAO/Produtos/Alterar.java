@@ -1,18 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
+
 package br.senac.sp.DAO.Produtos;
 
 import br.senac.sp.Model.Produtos;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
-/**
- *
- * @author Paulo.Bezerra
- */
+
+
+
+
 public class Alterar {
 
     private Connection conexao = null;
@@ -58,6 +56,7 @@ public class Alterar {
         return produtos;
     }
 
+    //Alterar produto
     public void AtualizarProduto(Produtos produtos) {
 
 
